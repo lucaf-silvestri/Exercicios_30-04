@@ -1,0 +1,92 @@
+﻿
+LISTA DE EXERCÍCIOS
+
+
+1. Faça um programa que receba a idade de uma pessoa em anos e imprima essa idade em: Meses, Dias, Horas, Minutos.
+
+
+algoritmo "idade em meses dias horas e minutos"
+var
+idade, meses, dias, horas, minutos: REAL
+
+   inicio
+      ESCREVAL("Cálculo de idade em meses, dias, horas e minutos.")
+      ESCREVAL("Quantos anos de idade você tem?")
+      LEIA (idade)
+
+      meses = idade * 12
+      dias = idade * 365
+      horas = idade * 8760
+      minutos = idade * 52560  
+
+      ESCREVAL("Você tem "meses" meses de idade")
+      ESCREVAL("Você tem "dias" dias de idade")
+      ESCREVAL("Você tem "horas" horas de idade")
+      ESCREVAL("Você tem "minutos" minutos de idade")
+fimalgoritmo
+
+
+
+
+
+2. Faça um programa que receba o ano de nascimento de uma pessoa e o ano atual. Calcule e imprima:
+a)	A idade dessa pessoa
+b)	Essa idade convertida em semana
+
+
+
+algoritmo "idade em anos e semanas"
+var
+diaNascimento, mesNascimento, anoNascimento, anoAtual, mesAtual, diaAtual, idadeEmAnos, idadeEmDias, idadeSemanas: REAL
+
+   inicio
+      ESCREVAL("Qual o seu dia de nascimento?")
+      LEIA (diaNascimento)
+      ESCREVAL("Qual o número do seu mês de nascimento?")
+      LEIA (mesNascimento)
+      ESCREVAL("Qual seu ano de nascimento?")
+      LEIA (anoNascimento)
+
+      anoAtual = Calendario.Ano_Atual
+      mesAtual = Calendario.Mes_Atual
+      diaAtual = Calendario.Dia_Atual
+
+      idadeEmAnos = (((12-mesNascimento) *31 + (31 - diaNascimento)) + (((anoAtual - anoNascimento) - 1)*365) + ((mesAtual*31) - (31 - diaAtual))/365
+      idadeEmDias = ((12-mesNascimento) *31 + (31 - diaNascimento)) + (((anoAtual-anoNascimento) - 1)*365) + ((mesAtual*31) - (31 - diaAtual))
+
+      ESCREVAL("Você tem " idadeEmAnos " anos de idade.")
+
+      idadeSemanas = idadeEmDias/7
+      ESCREVAL("Sua idade é de aproximadamente "idadeSemanas" semanas.")
+fimalgoritmo
+
+
+
+
+
+3. Uma empresa decide dar aumento de 30% aos funcionários cujo salário é inferior a 500 reais. Escreva um programa que receba o salário de um funcionário e imprima o valor do salário reajustado ou uma mensagem caso o funcionário não tenha direito a aumento.
+
+
+
+algoritmo "aumento-de-salario"
+var
+salario, aumento, novoSalario: REAL
+
+   inicio
+      ESCREVAL("Qual o salário do funcionário atualmente?")
+      LEIA (salario)
+
+      SE salario < 500
+      ENTAO
+         aumento = salario*0.3
+         novoSalario = salario + aumento 
+         ESCREVAL("O funcionário receberá um aumento de 30% em seu salário, equivalente a R$"aumento".")
+         ESCREVAL("Passará a receber um novo salário de R$"novoSalario".")
+      SENAO
+         ESCREVAL("O salário do funcionário já está de acordo.")
+      FIMSE      
+fimalgoritmo
+
+
+
+
